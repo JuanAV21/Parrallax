@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://btkixdrmoekpq"]
+
+[ext_resource type="Script" path="res://Character/player.gd" id="1_nps83"]
+[ext_resource type="Texture2D" uid="uid://c0h4o2dgvufur" path="res://Assets/New Piskel (1).png" id="1_ux2o5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f5iho"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7sio"]
+atlas = ExtResource("1_ux2o5")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0wls"]
+atlas = ExtResource("1_ux2o5")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s4jyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7sio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0wls")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_nps83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_f5iho")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s4jyw")
+animation = &"Run"
+frame = 1
+frame_progress = 0.762463
+
+[node name="Camera2D" type="Camera2D" parent="."]

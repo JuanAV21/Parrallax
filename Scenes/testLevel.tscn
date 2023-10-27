@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://c34230mchpq54"]
+
+[ext_resource type="Script" path="res://Scenes/level_one.gd" id="1_an1pq"]
+[ext_resource type="Texture2D" uid="uid://u25di0cedmh5" path="res://Assets/Ground.png" id="2_pgbkf"]
+[ext_resource type="Script" path="res://Scenes/TileMap.gd" id="3_nv22x"]
+[ext_resource type="PackedScene" uid="uid://btkixdrmoekpq" path="res://Character/player.tscn" id="3_vu5uy"]
+[ext_resource type="PackedScene" uid="uid://b5nebgi2cs7wv" path="res://Character/enemy_2.tscn" id="4_smf5e"]
+[ext_resource type="Script" path="res://Scenes/CharacterBody2D.gd" id="5_604rp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxk56"]
+resource_name = "ground"
+texture = ExtResource("2_pgbkf")
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(6, 7.125, 5.875, -8, -8, -8, -8, 7.1875)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.875, 5.8125, -3, 6, 8, -8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.875, -2.8125, -6.1875, 8, 8, 8, 8, -2.875)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.875, -8, -5.8125, 7.0625, 8, 7, 8, -8)
+
+[sub_resource type="TileSet" id="TileSet_bha1a"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_hxk56")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqibh"]
+size = Vector2(131, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1g6xc"]
+size = Vector2(58, 50)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ks41"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_an1pq")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_bha1a")
+format = 2
+layer_0/tile_data = PackedInt32Array(65536, 0, 0, 131072, 0, 1, 65537, 0, 0, 131073, 0, 1, 65538, 0, 0, 131074, 0, 1, 65539, 0, 0, 131075, 0, 1, 65540, 0, 0, 131076, 0, 1, 65541, 0, 0, 131077, 0, 1, 65542, 0, 0, 131078, 0, 1, 65543, 0, 0, 131079, 0, 1, 65544, 0, 0, 131080, 0, 1, 65545, 0, 0, 131081, 0, 1, 65546, 0, 0, 131082, 0, 1, 65547, 0, 0, 131083, 0, 1, 65548, 0, 0, 131084, 0, 1, 65549, 0, 0, 131085, 0, 1, 65550, 0, 0, 131086, 0, 1, 65551, 0, 0, 131087, 0, 1, 65552, 0, 0, 131088, 0, 1, 65553, 0, 0, 131089, 0, 1, 65554, 0, 0, 131090, 0, 1, 65555, 0, 0, 131091, 0, 1, 65556, 0, 0, 131092, 0, 1, 65557, 0, 0, 131093, 0, 1, 65558, 0, 0, 131094, 0, 1, 65559, 0, 0, 131095, 0, 1, 65560, 0, 0, 131096, 0, 1, 65561, 0, 0, 131097, 0, 1, 65562, 0, 0, 131098, 0, 1, 65563, 0, 0, 131099, 0, 1, 65564, 0, 0, 131100, 0, 1, 65565, 0, 0, 131101, 0, 1, 65566, 0, 0, 131102, 0, 1, 65567, 0, 0, 131103, 0, 1, 65568, 0, 0, 131104, 0, 1, 65569, 0, 0, 131105, 0, 1, 65570, 0, 0, 131106, 0, 1, 65571, 0, 0, 131107, 0, 1, 65572, 0, 0, 131108, 0, 1, 65573, 0, 0, 131109, 0, 1, 65574, 0, 0, 131110, 0, 1, 65575, 0, 0, 131111, 0, 1, 65576, 0, 0, 131112, 0, 1, 65577, 0, 0, 131113, 0, 1, 65578, 0, 0, 131114, 0, 1, 65579, 0, 0, 131115, 0, 1, 65580, 0, 0, 131116, 0, 1, 65581, 0, 0, 131117, 0, 1, 65582, 0, 0, 131118, 0, 1, 65583, 0, 0, 131119, 0, 1, 65584, 0, 0, 131120, 0, 1, 65585, 0, 0, 131121, 0, 1, 65586, 0, 0, 131122, 0, 1, 65587, 0, 0, 131123, 0, 1, 65588, 0, 0, 131124, 0, 1, 65589, 0, 0, 131125, 0, 1, 65590, 0, 0, 131126, 0, 1, 65591, 0, 0, 131127, 0, 1, 65592, 0, 0, 131128, 0, 1, 65593, 0, 0, 131129, 0, 1, 65594, 0, 0, 131130, 0, 1, 65595, 0, 0, 131131, 0, 1, 65596, 0, 0, 131132, 0, 1, 65597, 0, 0, 131133, 0, 1, 65598, 0, 0, 131134, 0, 1, 65599, 0, 0, 131135, 0, 1, 65600, 0, 0, 131136, 0, 1, 65601, 0, 0, 131137, 0, 1, 65602, 0, 0, 131138, 0, 1, 65603, 0, 0, 131139, 0, 1, 65604, 0, 0, 131140, 0, 1, 65605, 0, 0, 131141, 0, 1, 65606, 0, 0, 131142, 0, 1, 131143, 0, 1, 131144, 65536, 1, 65607, 0, 1, 65608, 65536, 1, 71, 0, 1, 72, 65536, 1, -65465, 0, 1, -65464, 65536, 1, -131001, 0, 1, -131000, 65536, 1, -196537, 0, 1, -196536, 65536, 1, -262073, 0, 1, -262072, 65536, 1, -327609, 0, 1, -327608, 65536, 1, -393145, 0, 1, -393144, 65536, 1, -131008, 65536, 1, -131007, 65536, 1, -131009, 0, 1, -131010, 0, 1, -131016, 65536, 1, -131015, 65536, 1, -131018, 0, 1, -131017, 0, 1, 196606, 0, 1, 196607, 65536, 1, 131070, 0, 1, 131071, 65536, 1, 65534, 0, 1, 65535, 65536, 1, -2, 0, 1, -1, 65536, 1, -65538, 0, 1, -65537, 65536, 1, -131074, 0, 1, -131073, 65536, 1, -196610, 0, 1, -196609, 65536, 1, -262146, 0, 1, -262145, 65536, 1, -327682, 0, 1, -327681, 65536, 1, -393218, 0, 1, -393217, 65536, 1, -458754, 0, 1, -458753, 65536, 1, 393293, 0, 0, 458829, 0, 1, 393294, 65536, 0, 458830, 65536, 1, 262221, 0, 0, 327757, 0, 1, 262222, 65536, 0, 327758, 65536, 1, 131149, 0, 0, 196685, 0, 1, 131150, 65536, 0, 196686, 65536, 1, 77, 0, 0, 65613, 0, 1, 78, 65536, 0, 65614, 65536, 1, -130995, 0, 0, -65459, 0, 1, -130994, 65536, 0, -65458, 65536, 1, -262067, 0, 0, -196531, 0, 1, -262066, 65536, 0, -196530, 65536, 1, -393139, 0, 0, -327603, 0, 1, -393138, 65536, 0, -327602, 65536, 1, 393291, 0, 0, 458827, 0, 1, 393292, 65536, 0, 458828, 65536, 1, 393289, 0, 0, 458825, 0, 1, 393290, 65536, 0, 458826, 65536, 1, 393287, 0, 0, 458823, 0, 1, 393288, 65536, 0, 458824, 65536, 1, 393285, 0, 0, 458821, 0, 1, 393286, 65536, 0, 458822, 65536, 1, 393283, 0, 0, 458819, 0, 1, 393284, 65536, 0, 458820, 65536, 1, 393281, 0, 0, 458817, 0, 1, 393282, 65536, 0, 458818, 65536, 1, 393279, 0, 0, 458815, 0, 1, 393280, 65536, 0, 458816, 65536, 1, 393277, 0, 0, 458813, 0, 1, 393278, 65536, 0, 458814, 65536, 1)
+script = ExtResource("3_nv22x")
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("3_vu5uy")]
+position = Vector2(69, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Start" type="Area2D" parent="."]
+position = Vector2(65, -46)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start"]
+position = Vector2(4, 26)
+shape = SubResource("RectangleShape2D_sqibh")
+
+[node name="End" type="Area2D" parent="."]
+position = Vector2(294, -36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+position = Vector2(717, 109)
+shape = SubResource("RectangleShape2D_1g6xc")
+
+[node name="Enemy_2" parent="." instance=ExtResource("4_smf5e")]
+position = Vector2(371, -7)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(202, -7)
+script = ExtResource("5_604rp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(169, 0)
+shape = SubResource("CapsuleShape2D_5ks41")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_shape_entered" from="Start" to="Player" method="_on_start_body_shape_entered"]
+[connection signal="body_shape_entered" from="End" to="Player" method="_on_end_body_shape_entered"]
+[connection signal="body_shape_entered" from="Enemy_2" to="Player" method="_on_enemy_2_body_shape_entered"]

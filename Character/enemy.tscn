@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ge0niicfeo24"]
+
+[ext_resource type="Texture2D" uid="uid://cqtshr0jbvqik" path="res://Assets/New Piskel (2).png" id="1_bm2fg"]
+[ext_resource type="Script" path="res://Character/enemy.tres.gd" id="1_xxt8a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdrms"]
+atlas = ExtResource("1_bm2fg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xps5a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdrms")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onqj5"]
+
+[node name="Enemy" type="Area2D"]
+script = ExtResource("1_xxt8a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(372, 63)
+sprite_frames = SubResource("SpriteFrames_xps5a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(371, 66)
+shape = SubResource("CapsuleShape2D_onqj5")
