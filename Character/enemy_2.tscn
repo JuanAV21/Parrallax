@@ -1,8 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5nebgi2cs7wv"]
+[gd_scene load_steps=6 format=3 uid="uid://b5nebgi2cs7wv"]
 
 [ext_resource type="Script" path="res://Scenes/Enemy_2.gd" id="1_52ct6"]
+[ext_resource type="Texture2D" uid="uid://cqtshr0jbvqik" path="res://Assets/New Piskel (2).png" id="2_jqip2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gmakj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mgpq"]
+atlas = ExtResource("2_jqip2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gwg4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mgpq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Enemy_2" type="Area2D"]
 script = ExtResource("1_52ct6")
@@ -10,8 +26,7 @@ script = ExtResource("1_52ct6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_gmakj")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gwg4t")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

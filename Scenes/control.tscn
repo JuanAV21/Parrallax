@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cppwylax2koro"]
+[gd_scene load_steps=7 format=3 uid="uid://cppwylax2koro"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_ay24l"]
 [ext_resource type="FontFile" uid="uid://bskjv7p4bhfs" path="res://Font/Minecraft.ttf" id="2_lyboc"]
+[ext_resource type="Texture2D" uid="uid://b5m8yovid6xu2" path="res://Assets_verTwo/Backgrounds/The Dawn/Reference-Image.png" id="2_x5uyr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vg87l"]
 bg_color = Color(0.0352941, 0.0352941, 0.0352941, 0.392157)
@@ -28,13 +29,21 @@ corner_radius_bottom_left = 20
 layout_mode = 3
 anchor_right = 0.833
 anchor_bottom = 0.79
-offset_right = -440.616
-offset_bottom = -108.92
+offset_right = 2208.38
+offset_bottom = 1424.08
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ay24l")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 3168.0
+offset_bottom = 1936.0
+texture = ExtResource("2_x5uyr")
+expand_mode = 1
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -42,8 +51,8 @@ color = Color(0.521569, 0.215686, 0.0627451, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 2840.0
+offset_bottom = 1568.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
@@ -57,8 +66,8 @@ theme_override_constants/separation = 20
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_lyboc")
-theme_override_font_sizes/font_size = 100
-text = "Parallax"
+theme_override_font_sizes/font_size = 200
+text = "The Story of Parallax"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -103,7 +112,7 @@ theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxFlat_vg87l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_j618k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yblw3")
-text = "Options"
+text = "How to Play"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Play Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/Options Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/Options Button" to="." method="_on_options_button_pressed"]

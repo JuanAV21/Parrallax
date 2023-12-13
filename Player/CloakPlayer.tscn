@@ -210,6 +210,3 @@ animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_5yt0x")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)

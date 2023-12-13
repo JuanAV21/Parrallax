@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://4i64ron8mryt"]
+
+[ext_resource type="Script" path="res://Control.gd" id="1_vh84h"]
+[ext_resource type="Texture2D" uid="uid://b5m8yovid6xu2" path="res://Assets_verTwo/Backgrounds/The Dawn/Reference-Image.png" id="2_i3w1s"]
+[ext_resource type="FontFile" uid="uid://bskjv7p4bhfs" path="res://Font/Minecraft.ttf" id="3_pfyvd"]
+[ext_resource type="Texture2D" uid="uid://ep28u3mkpe6f" path="res://Assets_verTwo/Spacebar-removebg-preview.png" id="4_6syno"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohl3w"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vh84h")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 3408.0
+offset_bottom = 2008.0
+texture = ExtResource("2_i3w1s")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 192.0
+offset_right = 2856.0
+offset_bottom = 1576.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 1000
+theme_override_constants/margin_right = 50
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pfyvd")
+theme_override_font_sizes/font_size = 200
+text = "Controls"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.09
+texture = ExtResource("4_6syno")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_bottom = 30
+
+[node name="Button" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pfyvd")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_ohl3w")
+text = "Menu"
+
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/VBoxContainer2/MarginContainer/Button" to="." method="_on_button_pressed"]

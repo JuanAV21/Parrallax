@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://csqt3nb7xmukp"]
+
+[ext_resource type="Script" path="res://Pro_Scenes/ColorRect.gd" id="1_w74aa"]
+[ext_resource type="Script" path="res://Pro_Scenes/Counter.gd" id="2_u38ld"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_left = -2.007
+anchor_top = -3.037
+anchor_right = -2.007
+anchor_bottom = -3.037
+offset_left = -47.9358
+offset_top = -32.0239
+offset_right = 11568.1
+offset_bottom = 4343.98
+color = Color(0.0392157, 0.0392157, 0.0392157, 0.486275)
+script = ExtResource("1_w74aa")
+
+[node name="Counter" type="Label" parent="."]
+offset_left = 536.0
+offset_top = 24.0
+offset_right = 576.0
+offset_bottom = 50.0
+text = "100"
+script = ExtResource("2_u38ld")
