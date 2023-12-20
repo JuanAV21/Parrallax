@@ -3,7 +3,12 @@
 # Presentation
 ## Dec 20, 2023
 
-<img src="" width=200>
+<img src="https://github.com/JuanAV21/Parrallax/blob/main/sample/Screen%20Shot%202023-12-20%20at%2012.29.46%20AM.png" width=200>
+<img src="https://github.com/JuanAV21/Parrallax/blob/main/sample/Screen%20Shot%202023-12-20%20at%2012.29.51%20AM.png" width=200>
+<img src="https://github.com/JuanAV21/Parrallax/blob/main/sample/Screen%20Shot%202023-12-20%20at%2012.30.09%20AM.png" width=200>
+<img src="https://github.com/JuanAV21/Parrallax/blob/main/sample/Screen%20Shot%202023-12-20%20at%2012.30.16%20AM.png" width=200>
+<img src="https://github.com/JuanAV21/Parrallax/blob/main/sample/Screen%20Shot%202023-12-20%20at%2012.30.34%20AM.png" width=200>
+
 
 ## Table of Contents
 1. [Overview](#Overview)
